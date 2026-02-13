@@ -244,3 +244,21 @@ pointer-events:none;
 transform:translate(-50%,-50%);
 z-index:-1;
 }
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  background: #111;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #00c853;
+}
