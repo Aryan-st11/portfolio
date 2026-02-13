@@ -44,3 +44,7 @@ window.addEventListener("mousemove",e=>{
 glow.style.left=e.clientX+"px";
 glow.style.top=e.clientY+"px";
 });
+
+window.onload = function (){
+  window.scrollTo(0,0);
+};
