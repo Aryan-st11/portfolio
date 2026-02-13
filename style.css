@@ -263,23 +263,3 @@ z-index:-1;
   background: #00c853;
 }
 
-.cta {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg,#00c853,#1de9b6);
-  color: white;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s;
-}
-
-button:hover {
-  box-shadow: 0 0 12px #00c853;
-}
-
