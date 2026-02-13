@@ -37,6 +37,17 @@ modal.style.display="flex";
 });
 });
 
+fetch('https://api.countapi.xyz/hit/aryan-portfolio/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitor-count").innerText = data.value;
+  });
+
+function trackResume() {
+  fetch('https://api.countapi.xyz/hit/aryan-portfolio/resume');
+}
+
+
 closeModal.onclick = ()=> modal.style.display="none";
 
 const glow = document.querySelector(".cursor-glow");
