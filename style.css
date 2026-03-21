@@ -182,3 +182,145 @@ margin-top:10px;
 border-radius:2px;
 }
 
+/* ===== LAYOUT FIXES ===== */
+
+section{
+padding:120px 12%;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+}
+
+/* HERO IMAGE */
+.hero-right img{
+width:320px;
+border-radius:15px;
+box-shadow:0 20px 50px rgba(0,0,0,.1);
+animation: float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(60px) scale(0.98);
+transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+/* NAV LINKS */
+.nav-links{
+display:flex;
+list-style:none;
+}
+
+.nav-links li{
+margin-left:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--dark);
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:var(--primary);
+transition:.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* HERO TEXT ANIMATION */
+.hero-left{
+animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* CURSOR GLOW */
+.cursor-glow{
+position:fixed;
+width:250px;
+height:250px;
+background:radial-gradient(circle, rgba(99,102,241,0.25), transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:-1;
+transition: all 0.1s linear;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-right img{
+width:220px;
+margin-top:30px;
+}
+
+.projects{
+flex-direction:column;
+}
+
+section{
+padding:80px 20px;
+}
+}
+
+.github-stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.github-stats img{
+width:320px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.github-stats img:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
