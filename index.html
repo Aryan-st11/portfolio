@@ -14,9 +14,9 @@
 
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#journey">Journey</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -26,19 +26,34 @@
 
 <div class="hero-left">
 <h1>
-Hi, I'm <span>Aryan</span><br>
-Choudhary
+Hi, I'm <span>Aryan Choudhary</span>
 </h1>
 
-<p id="typing"></p>
+<p class="tagline">
+Frontend Developer | JavaScript Enthusiast  
+I build clean, responsive web applications that solve real problems.
+</p>
 
-<a href="resume.pdf" download class="btn">Download Resume</a>
+<div class="hero-buttons">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="resume.pdf" download class="btn secondary">Download Resume</a>
+</div>
 </div>
 
 <div class="hero-right">
-<img src="images/profile.png">
+<img src="images/profile.png" alt="Aryan Profile">
 </div>
 
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<p class="about-text">
+I’m a 2nd-year Computer Science student passionate about building real-world web applications.
+I focus on creating clean UI, solving problems, and continuously improving my development skills.
+Currently seeking internship opportunities where I can contribute and grow.
+</p>
 </section>
 
 <!-- SKILLS -->
@@ -78,56 +93,36 @@ Choudhary
 
 <div class="projects">
 
-<div class="project">
+<div class="project-card">
 <img src="https://picsum.photos/600/400?1">
-<div class="overlay">Portfolio Website</div>
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio showcasing projects and skills.</p>
+<div class="tech">HTML • CSS • JavaScript</div>
+<div class="links">
+<a href="#" target="_blank">Live</a>
+<a href="#" target="_blank">Code</a>
+</div>
 </div>
 
-<div class="project">
+<div class="project-card">
 <img src="https://picsum.photos/600/400?2">
-<div class="overlay">AI Chat App</div>
+<h3>AI Chat App</h3>
+<p>Chat application with AI-powered responses and real-time interaction.</p>
+<div class="tech">JavaScript • API • Node.js</div>
+<div class="links">
+<a href="#" target="_blank">Live</a>
+<a href="#" target="_blank">Code</a>
+</div>
 </div>
 
-<div class="project">
+<div class="project-card">
 <img src="https://picsum.photos/600/400?3">
-<div class="overlay">Client Business Site</div>
-</div>
-
-</div>
-</section>
-
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal">&times;</span>
-    <h2 id="modalTitle"></h2>
-    <p>Project details go here. Add description and links.</p>
-  </div>
-</div>
-
-<!-- JOURNEY -->
-<section id="journey" class="reveal">
-<h2>Journey</h2>
-
-<div class="timeline">
-
-<div class="container left">
-<div class="content">
-<h3>2024</h3>
-<p>Started serious coding and DSA practice.</p>
-</div>
-</div>
-
-<div class="container right">
-<div class="content">
-<h3>2025</h3>
-<p>Built projects and freelance-ready portfolio.</p>
-</div>
-</div>
-
-<div class="container left">
-<div class="content">
-<h3>Next</h3>
-<p>Targeting product company internship.</p>
+<h3>Business Website</h3>
+<p>Client-ready responsive website built for small business needs.</p>
+<div class="tech">HTML • CSS • JS</div>
+<div class="links">
+<a href="#" target="_blank">Live</a>
+<a href="#" target="_blank">Code</a>
 </div>
 </div>
 
@@ -138,26 +133,27 @@ Choudhary
 <section id="contact" class="reveal">
 <h2>Let's Connect</h2>
 
-  <div class="social-links">
-  <a href="https://linkedin.com/in/aryan-choudhary-87262b301" target="_blank">
-    LinkedIn
-  </a>
-  <a href="https://github.com/Aryan-st11" target="_blank">
-    GitHub
-  </a>
+<p class="contact-text">
+I’m open to internships and collaboration opportunities. Let’s build something amazing 🚀
+</p>
+
+<div class="social-links">
+<a href="https://linkedin.com/in/aryan-choudhary-87262b301" target="_blank">LinkedIn</a>
+<a href="https://github.com/Aryan-st11" target="_blank">GitHub</a>
 </div>
 
 <form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="form-name" value="contact">
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Message"></textarea>
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Message"></textarea>
 
-  <button type="submit">Send Message</button>
+<button type="submit">Send Message</button>
 </form>
 
 </section>
+
 <div class="cursor-glow"></div>
 
 <script src="script.js"></script>
