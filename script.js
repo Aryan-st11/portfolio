@@ -1,50 +1,82 @@
-function reveal(){
-document.querySelectorAll(".reveal").forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-100){
-el.classList.add("active");
+// REVEAL ON SCROLL
+function reveal() {
+  document.querySelectorAll(".reveal").forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
 }
-});
-}
-window.addEventListener("scroll",reveal);
+window.addEventListener("scroll", reveal);
 reveal();
 
-window.addEventListener("scroll",()=>{
-document.querySelectorAll(".bar div").forEach(bar=>{
-bar.style.width=bar.dataset.width;
-});
+
+// SKILL BAR ANIMATION (run once)
+let skillsAnimated = false;
+
+window.addEventListener("scroll", () => {
+  if (!skillsAnimated) {
+    document.querySelectorAll(".bar div").forEach(bar => {
+      bar.style.width = bar.dataset.width;
+    });
+    skillsAnimated = true;
+  }
 });
 
-let text="AI & Web Developer";
-let i=0;
 
-function type(){
-if(i<text.length){
-typing.textContent+=text[i];
-i++;
-setTimeout(type,80);
-}
+// TYPING EFFECT (FIXED)
+const typingElement = document.getElementById("typing");
+
+const text = "Frontend Developer | JavaScript Enthusiast";
+let i = 0;
+
+function type() {
+  if (typingElement && i < text.length) {
+    typingElement.textContent += text[i];
+    i++;
+    setTimeout(type, 50);
+  }
 }
 type();
 
-const projects = document.querySelectorAll(".project");
+
+// PROJECT MODAL (UPDATED FOR project-card)
+const projects = document.querySelectorAll(".project-card");
 const modal = document.getElementById("projectModal");
 const title = document.getElementById("modalTitle");
+const closeModal = document.getElementById("closeModal");
 
-projects.forEach(p=>{
-p.addEventListener("click",()=>{
-title.innerText = p.querySelector(".overlay").innerText;
-modal.style.display="flex";
+projects.forEach(p => {
+  p.addEventListener("click", () => {
+    const projectTitle = p.querySelector("h3").innerText;
+    title.innerText = projectTitle;
+    modal.style.display = "flex";
+  });
 });
-});
 
-closeModal.onclick = ()=> modal.style.display="none";
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = "none";
+}
 
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+// CURSOR GLOW
 const glow = document.querySelector(".cursor-glow");
-window.addEventListener("mousemove",e=>{
-glow.style.left=e.clientX+"px";
-glow.style.top=e.clientY+"px";
+
+window.addEventListener("mousemove", e => {
+  if (glow) {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  }
 });
 
-window.onload = function (){
-  window.scrollTo(0,0);
+
+// RESET SCROLL ON LOAD
+window.onload = function () {
+  window.scrollTo(0, 0);
 };
