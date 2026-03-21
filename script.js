@@ -80,3 +80,7 @@ window.addEventListener("mousemove", e => {
 window.onload = function () {
   window.scrollTo(0, 0);
 };
+
+document.querySelectorAll(".project-card").forEach((card, index) => {
+  card.style.transitionDelay = `${index * 0.1}s`;
+});
